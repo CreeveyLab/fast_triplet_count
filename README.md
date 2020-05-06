@@ -22,7 +22,7 @@ The output consistes of a single line with the following fields:
 
 *Length* -> total legnth in nucleotides of all contigs/chromosomes/sequences in the file
 
-*T_count*	-> number of nucleotide bases with a T
+*T_count*	-> number of nucleotide bases with a T/U
 
 *C_count*	-> number of nucleotide bases with a C
 
@@ -30,7 +30,7 @@ The output consistes of a single line with the following fields:
 
 *G_count*	-> number of nucleotide bases with a G
 
-*N_count*	-> number of nucleotide bases with a non standard character (i.e. not a T, C, A or G)
+*N_count*	-> number of nucleotide bases with a non standard character (i.e. not a T/U, C, A or G)
 
 Followed by the number of (overlapping) instances of all 64 possible triplets in the following order:
 
