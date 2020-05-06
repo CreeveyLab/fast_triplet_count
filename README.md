@@ -1,5 +1,5 @@
 # fast_triplet_count
-This tool reads a fasta file (either gzippped or uncompressed) and calculates the frequency of all triplets (codons if the data provided are CDS sequences).
+This tool reads a fasta file (either gzippped or uncompressed) and calculates the frequency of all triplets (codons if the data provided are CDS sequences). It is designed to do this extremely quickly so that it can be run on thousands of genomes. When run an a standard desktop computer on all 44K prokaryotic genoems from Ensembl (using a bash for loop to run it on all the genomes), it completes in under 1hour 40 mins (approx 6 genomes per second). 
 
 ## Prerequisites:
 
@@ -39,6 +39,8 @@ Followed by the number of (overlapping) instances of all 64 possible triplets in
 Finally, the the number of non-standard triplets denoted by *XXX*
 
 ## Example
+
+
 
 Given this sequence, the following overlapping triplets are possible:
 
