@@ -40,7 +40,18 @@ Finally, the the number of non-standard triplets denoted by *XXX*
 
 ## Example
 
+Given a zgipped fasta file called `test1.fas.gz` (as provided in the repository) containing the following:
 
+```
+>test
+ATGTGAATGAAACACT
+```
+
+Call the software as follows:
+
+```
+fast_triplet_count test1.fas.gz
+```
 
 Given this sequence, the following overlapping triplets are possible:
 
@@ -62,11 +73,25 @@ ATG
              ACT
 ```
 
-The outpue of the tools with this input file would be:
+The output to the standard stream would be:
 
 File_Name|Length|T_count|C_count|A_count|G_count|N_count|TTT|TTC|TTA|TTG|TCT|TCC|TCA|TCG|TAT|TAC|TAA|TAG|TGT|TGC|TGA|TGG|CTT|CTC|CTA|CTG|CCT|CCC|CCA|CCG|CAT|CAC|CAA|CAG|CGT|CGC|CGA|CGG|ATT|ATC|ATA|ATG|ACT|ACC|ACA|ACG|AAT|AAC|AAA|AAG|AGT|AGC|AGA|AGG|GTT|GTC|GTA|GTG|GCT|GCC|GCA|GCG|GAT|GAC|GAA|GAG|GGT|GGC|GGA|GGG|XXX
 -|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-
 test.fas|16|4|2|7|3|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|2|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|2|1|0|1|0|1|1|1|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|2|0|0|0|0|0|0
+
+This can be caught and redirected to a file as follows:
+
+```
+fast_triplet_count test1.fas.gz > test1.tripletCount.txt
+```
+
+OR if it is necessary to run the tool on many (thousands) of genomes, it can be called with a bash for loop as follows:
+
+```
+for i in *.fas.gz; do fast_triplet_count $i; done > alltriplet_counts.txt
+```
+
+
 
 
 
