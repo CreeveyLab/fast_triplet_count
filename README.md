@@ -1,5 +1,5 @@
 # fast_triplet_count
-This tool reads a fasta file (either gzippped or uncompressed) and calculates the frequency of all triplets.
+This tool reads a fasta file (either gzippped or uncompressed) and calculates the frequency of all triplets (codons if the data provided are CDS sequences).
 
 ## Prerequisites:
 
@@ -12,7 +12,7 @@ zlib - which should come as standard on most operating systems.
 
 ## Overview:
 
-The tool reads a fasta file with one or more sequences and calculate all (averlapping) triplets. The input fasta file can be gzipped or uncompressed. 
+The tool reads a fasta file with one or more sequences and calculate all (overlapping) triplets. The input fasta file can be gzipped or uncompressed. 
 
 The output is printed to the stardard output stream.
 
@@ -60,6 +60,11 @@ ATG
              ACT
 ```
 
+The outpue of the tools with this input file would be:
+
+File_Name|Length|T_count|C_count|A_count|G_count|N_count|TTT|TTC|TTA|TTG|TCT|TCC|TCA|TCG|TAT|TAC|TAA|TAG|TGT|TGC|TGA|TGG|CTT|CTC|CTA|CTG|CCT|CCC|CCA|CCG|CAT|CAC|CAA|CAG|CGT|CGC|CGA|CGG|ATT|ATC|ATA|ATG|ACT|ACC|ACA|ACG|AAT|AAC|AAA|AAG|AGT|AGC|AGA|AGG|GTT|GTC|GTA|GTG|GCT|GCC|GCA|GCG|GAT|GAC|GAA|GAG|GGT|GGC|GGA|GGG|XXX
+-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-
+test.fas|16|4|2|7|3|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|2|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|2|1|0|1|0|1|1|1|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|2|0|0|0|0|0|0
 
 
 
